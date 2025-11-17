@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<title>Karan Motor Private Training — Professional Driving School</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-1:#07162a; --bg-2:#0b2a47; --card:#06223b; --muted:#9fb8d6;
+  --accent:#2ea3ff; --accent-2:#0056d6; --glass: rgba(255,255,255,0.03);
+  --radius:16px; color-scheme:dark; font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+
+*{box-sizing:border-box;}
+body{margin:0; line-height:1.5; background: linear-gradient(180deg,var(--bg-1), var(--bg-2)); color:#eaf6ff;}
+a{text-decoration:none;}
+
+.container{max-width:1200px; margin:0 auto; padding:30px;}
+header{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+.brand {
+  display: flex;
+  align-items: center; /* vertically center logo with text */
+  gap: 14px; /* space between logo and text */
+}
+
+.brand div {
+  display: flex;
+  flex-direction: column; /* stack h1 and p vertically */
+  justify-content: center; /* center vertically relative to logo */
+}
+
+.brand div h1 {
+  margin: 0;
+  line-height: 1.2; /* tighter spacing */
+  font-size: 1.3rem;
+}
+
+.brand div p {
+  margin: 2px 0 0 0; /* small gap between h1 and p */
+  line-height: 1.2;
+  font-size: 0.95rem;
+}
+
+.logo {
+  width: 90px; /* increase logo size */
+  height: 90px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg,var(--accent),var(--accent-2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img{width:100%; height:100%; object-fit:contain;}
+nav a{color:var(--muted); margin-left:18px; font-weight:600;}
+nav a.cta{background:var(--accent); color:#021229; padding:8px 12px; border-radius:12px; box-shadow:0 6px 18px rgba(46,163,255,0.12);}
+
+/* Hero container */
+/* Hero container */
+.hero {
+  display: flex;
+  gap: 24px; /* tighter spacing */
+  margin-top: 28px;
+  padding: 24px;
+  border: 2px solid rgba(46,163,255,0.6);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(46,163,255,0.3);
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+}
+
+.hero-left {
+  flex: 2;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* reduce gaps between hero-left elements */
+}
+
+.hero-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.hero-left p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* tighter badge spacing */
+  margin-top: 8px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.hero-cta .btn {
+  flex: 1;
+  text-align: center;
+}
+
+/* Right section cards */
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* reduce spacing between cards */
+  min-width: 220px;
+}
+
+.hero-right .info-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(46,163,255,0.4);
+  box-shadow: 0 8px 20px rgba(46,163,255,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.hero-right .info-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(46,163,255,0.4);
+  border: 2px solid rgba(46,163,255,1);
+}
+
+.hero-right .info-card h3 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.hero-right .info-card p {
+  margin: 3px 0;
+  font-size: 120x;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media(max-width:980px){
+  .hero {
+    flex-direction: column;
+  }
+  .hero-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .hero-right .info-card {
+    flex: 1 1 48%;
+  }
+}
+
+@media(max-width:520px){
+  .hero-right .info-card {
+    flex: 1 1 100%;
+  }
+  .hero-cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .badges {
+    gap: 6px;
+  }
+}
+
+
+.badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+.badge{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px 14px; border-radius:12px; color:var(--accent); font-weight:700;}
+.hero-cta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;}
+.btn{padding:12px 16px; border-radius:12px; border:none; font-weight:700; cursor:pointer;}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#021229;}
+.btn-outline{background:transparent; border:1px solid rgba(255,255,255,0.05); color:var(--muted);}
+
+/* Services */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px;}
+.service{background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:18px; border-radius:14px; min-height:110px; box-shadow:0 12px 30px rgba(2,40,80,0.36); transition: transform 0.3s, box-shadow 0.3s;}
+.service:hover{transform: translateY(-6px); box-shadow:0 20px 40px rgba(2,40,80,0.5);}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:18px;}
+.gallery img{width:100%; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 10px 30px rgba(2,40,80,0.35); cursor:pointer; transition: transform 0.3s, filter 0.3s;}
+.gallery img:hover{transform: scale(1.05); filter: brightness(1.1);}
+
+/* Lightbox */
+#lightbox-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:999;}
+#lightbox-overlay img{max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 30px rgba(0,0,0,0.5);}
+#lightbox-overlay:target{display:flex;}
+
+/* Reviews */
+.reviews-container{overflow:hidden; position:relative; margin-top:24px; padding:20px 0; background:rgba(0,0,0,0.15); border-radius:14px;}
+.reviews-track{display:flex; gap:16px; animation: scrollReviews 120s linear infinite; flex-wrap:nowrap;}
+@keyframes scrollReviews{0%{transform:translateX(0);} 100%{transform:translateX(-50%);}}
+.review-card{flex:0 0 auto; min-width:280px; max-width:280px; background:rgba(2,40,80,0.2); padding:16px; border-radius:14px; box-shadow:0 10px 24px rgba(2,40,80,0.35); display:flex; flex-direction:column; gap:8px; transition: transform 0.3s;}
+.review-card:hover{transform: scale(1.03);}
+.review-header{display:flex; align-items:center; gap:10px;}
+.review-header img{width:36px; height:36px; border-radius:50%; object-fit:cover; background:#021229;}
+.review-name{font-weight:700; color:var(--accent);}
+.review-stars{color:#ffd700; font-size:14px;}
+.review-text{font-size:13px; color:#eaf6ff; line-height:1.3;}
+
+/* Footer */
+footer{margin-top:36px;
+ padding:22px;
+ border-radius:14px;
+ background:linear-gradient(180deg, rgba(0,0,0,0.12), 
+rgba(255,255,255,0.01)); box-shadow:0 12px 30px rgba(2,40,80,0.35);
+}
+/* Footer adjustments */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 220px;
+}
+.footer-center {
+  flex: 1;
+  text-align: center;     /* Centers the heading + links */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Ensures perfect centering */
+  justify-content: center;
+}
+
+.footer-center a {
+  display: block;
+  margin: 4px 0;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-center a:hover {
+  color: var(--accent);
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.social-icon i {
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.social-icon:hover i {
+  transform: scale(1.3);
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.small-muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+
+.contact-list{display:flex; gap:18px; align-items:center; flex-wrap:wrap;}
+.contact-item{display:flex; flex-direction:column;}
+.contact-item strong{font-size:15px;}
+.small-muted{color:var(--muted); font-size:13px;}
+.wa-fab{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021229;padding:14px 16px;border-radius:999px;display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;}
+
+/* Responsive */
+@media(max-width:980px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid-3{grid-template-columns:1fr}.gallery img{height:auto; max-height:250px}}
+.small-muted{color:var(--muted); font-size:13px;}
+.wa-fab{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021229;padding:14px 16px;border-radius:999px;display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;}
+/* Mobile adjustments */
+@media(max-width:520px){
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .brand {
+    margin-bottom: 10px;
+  }
+  nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+  nav a.cta {
+    margin-top: 4px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .reviews-container {
+    overflow-x: scroll;
+    padding: 10px 0;
+  }
+  .reviews-track {
+    animation: none; /* stop auto scroll on mobile */
+    gap: 12px;
+  }
+  .review-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+}
+
+/* Responsive */
+@media(max-width:980px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid-3{grid-template-columns:1fr}.gallery img{height:auto; max-height:250px}}
+
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind all content */
+  pointer-events: none; /* let clicks go through */
+  background: linear-gradient(180deg,var(--bg-1), var(--bg-2));
+}
+
+/* Highlight all service cards */
+#services .service {
+  border: 2px solid rgba(46,163,255,0.6); /* subtle blue border */
+  box-shadow: 0 8px 24px rgba(46,163,255,0.25); /* soft glow */
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+/* Optional: Hover effect for stronger highlight */
+#services .service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(46,163,255,0.5);
+  border: 2px solid rgba(46,163,255,1);
+}
+/* Highlight all review cards */
+#reviews .review-card {
+  border: 2px solid rgba(46,163,255,0.4); /* subtle blue border */
+  box-shadow: 0 8px 24px rgba(46,163,255,0.2); /* soft glow */
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+}
+
+/* Hover effect for reviews */
+#reviews .review-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(46,163,255,0.5);
+  border: 2px solid rgba(46,163,255,1);
+}
+
+.features-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 equal columns */
+    gap: 15px 25px;                   /* spacing between rows + columns */
+    margin-top: 20px;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 140, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 140, 255, 0.45);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 48px;   /* equal height */
+    width: 100%;        /* equal width inside column */
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<div class="container">
+<header>
+  <div class="brand">
+    <div class="logo" style="width:90px; height:90px;"><!-- Increased size -->
+      <img src="./logo.jpg" alt="Karan Motors Logo">
+    </div>
+    <div>
+      <div>
+  <h1 style="font-size:32px; font-weight:700;">Karan Motor Private Training</h1>
+  <p style="margin-top:4px;">Professional Driving School — Vadodara</p>
+</div>
+
+    </div>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <!-- Left Section: Existing content -->
+  <div class="hero-left">
+    <h2>Safe. Practical. Confident Driving — Learn with Experts</h2>
+    <p>Master real-road driving with personalised coaching, modern safety-equipped vehicles, and complete RTO guidance — designed to make you a confident and responsible driver.</p>
+    
+   <div class="features-wrapper">
+
+    <div class="feature-box">🔰 12+ Years of Driving Expertise</div>
+    <div class="feature-box">📈 Daily progress updates</div>
+
+    <div class="feature-box">🚗 Serving All Areas of Vadodara</div>
+    <div class="feature-box">💬 Beginner-friendly guidance</div>
+
+    <div class="feature-box">✅ License & RTO Support</div>
+    <div class="feature-box">🏆 Trusted by Hundreds of Students</div>
+
+</div>
+
+
+    
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/919898260034?text=Hi%20Karan%20Motor%20-%20I%20am%20interested%20in%20driving%20courses.%20Please%20share%20details." target="_blank">Message on WhatsApp</a>
+      <a class="btn btn-primary" href="#services">View Services</a>
+    </div>
+  </div>
+
+  <!-- Right Section: Professional Info Cards -->
+  <div class="hero-right">
+     <div class="info-card">
+      <h3>1️⃣ <strong>1-Week Intensive Course</strong></h3>
+      <p>⏱️ Duration: 7 Days<br>🚘 Practice: Unlimited kilometers</p>
+</div>
+ <div class="info-card">
+      <h3>2️⃣ <strong>Standard 20-Day Course</strong>
+<p>⏱️ Duration: 20 Days<br>🚘 Practice: 6 km per day</p>
+    </div>
+    <div class="info-card">
+      <h3>Timings</h3>
+      <p>⏰ 8 AM - 11 PM</p>
+    </div>
+    <div class="info-card">
+      <h3>Contact</h3>
+      <p>📞 +91 9898260034</p>
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+<section id="services">
+  <h1>Our Services</h1>
+  <div class="grid-3">
+    <div class="service"><h4>Serving All Areas of Vadodara</h4><p>Doorstep pickup/drop and classes across the city.</p></div>
+    <div class="service"><h4>Free Pickup-Drop Service</h4><p>Safe and timely pickup-drop.</p></div>
+    <div class="service"><h4>Daily 1 Hour Training</h4><p>Short focused practical sessions to build muscle memory.</p></div>
+    <div class="service"><h4>Experienced Instructor</h4><p>Professional, patient and safety-first teaching approach.</p></div>
+    <div class="service"><h4>Training Without Side Control</h4><p>Real-world training — clutch/brake assistance is not used.</p></div>
+    <div class="service"><h4>Two-wheeler Training</h4><p>Safety and handling for two-wheeler riders.</p></div>
+    <div class="service"><h4>Flexible Batch Timings</h4><p>Morning, evening and weekend batches to suit your schedule.</p></div>
+    <div class="service"><h4>Advanced Driving Techniques</h4><p>Highway, defensive & advanced maneuvers for confident driving.</p></div>
+    <div class="service"><h4>Provision License Application</h4><p>Complete support with documentation & application submission.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h1>Gallery</h1>
+  <div class="gallery">
+    <img src="kpp.jpg" alt="training 1" onclick="openLightbox(this.src)">
+    <img src="kp2.jpeg" alt="training 2" onclick="openLightbox(this.src)">
+    <img src="kp3.jpeg" alt="training 3" onclick="openLightbox(this.src)">
+    <img src="kp4.webp" alt="training 4" onclick="openLightbox(this.src)">
+ 
+  </div>
+</section>
+
+<div id="lightbox-overlay" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<section id="reviews">
+  <h1>Student Reviews</h1>
+  <div class="reviews-container">
+    <div class="reviews-track">
+      <!-- All 19 reviews populated -->
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Rahul S.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Excellent training. Instructor is very patient and helpful!</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Priya M.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Learning was smooth and professional. Highly recommended.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Karan P.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">The pick-up/drop facility is very convenient. Loved it!</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Anjali T.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Professional and friendly instructors. Great experience.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Vikram K.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">I learned advanced techniques quickly. Thank you!</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Sonia R.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Very patient instructors. I feel confident on the road now.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Manish L.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Flexible timing and practical training. Loved it.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Riya S.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">The training was very professional and smooth.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Deepak J.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Instructor helped me improve my confidence on highways.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Neha P.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Amazing lessons with practical demonstrations. Recommended.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Amit R.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Well-structured training sessions. Great learning experience.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Sneha V.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Instructors are very helpful and friendly. Loved it.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Harsh K.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Great support and practical approach. Learned a lot!</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Pooja M.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Very professional and friendly environment. Highly recommend.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Vikas S.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Excellent coaching. Flexible timing and clear instructions.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Tina R.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Practical lessons are excellent. Very helpful instructors.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Rajesh G.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Highly professional training. Very satisfied with learning.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Simran D.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">Instructor is very patient and explains everything clearly.</div></div>
+      <div class="review-card"><div class="review-header"><img src="icon.jpg" alt=""><span class="review-name">Aditya N.</span></div><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">I feel confident driving independently now. Thank you!</div></div>
+    </div>
+  </div>
+</section>
+
+
+   <footer id="contact">
+  <div class="footer-grid">
+    <!-- Left section -->
+    <div class="footer-left">
+  <strong>Karan Motor Private Training</strong>
+  <div class="small-muted">Professional Driving School — Vadodara</div>
+  <div class="small-muted">Timing: 8 AM - 11 PM</div>
+  <div class="small-muted">Address: near FAG Company, Vallabh Nagar, Maneja, Vadodara, Gujarat 390013</div>
+</div>
+
+
+    <!-- Center section: Quick links -->
+    <div class="footer-center">
+      <strong>Quick Links</strong>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Right section: Contact & Socials -->
+    <div class="footer-right">
+      <strong>Contact :</strong>
+     
+      <strong>+91 9898260034</strong><br>
+      <strong>Follow Us</strong>
+      <div class="social-icons">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=karanmotors1105@gmail.com&su=Driving%20Course%20Inquiry&body=Hi%20Karan%2C%0AI%20would%20like%20to%20know%20more%20about%20driving%20courses." target="_blank" class="social-icon">
+  <i class="fas fa-envelope fa-lg"></i>
+</a>
+
+        <a href="https://instagram.com/karanmotors1105" target="_blank" class="social-icon">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1BkQk9eGQz/" target="_blank" class="social-icon">
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-copyright">
+    <div class="small-muted">© <span id="yr"></span> Karan Motor. All rights reserved.</div>
+  </div>
+</footer>
+
+
+
+
+<a class="wa-fab" href="https://wa.me/919898260034?text=Hi%20Karan%20Motor%20-%20I%20want%20to%20know%20about%20driving%20classes" target="_blank">WhatsApp</a>
+
+<script>
+document.getElementById('yr').innerText = new Date().getFullYear();
+function openLightbox(src){ document.getElementById('lightbox-img').src = src; document.getElementById('lightbox-overlay').style.display = 'flex'; }
+function closeLightbox(){ document.getElementById('lightbox-overlay').style.display = 'none'; }
+
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+});
+
+// Generate particles
+const particles = [];
+const particleCount = 80; // number of particles
+for(let i=0; i<particleCount; i++){
+  particles.push({
+    x: Math.random()*width,
+    y: Math.random()*height,
+    z: Math.random()*width,
+    size: Math.random()*2+1,
+    speed: Math.random()*0.5+0.2
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,width,height);
+  
+  particles.forEach(p=>{
+    p.z -= p.speed;
+    if(p.z < 1) p.z = width; // loop
+    
+    // 3D projection
+    const k = 200/p.z;
+    const x = (p.x - width/2) * k + width/2;
+    const y = (p.y - height/2) * k + height/2;
+    const size = p.size * k;
+    
+    ctx.beginPath();
+    ctx.arc(x,y,size,0,Math.PI*2);
+    ctx.fillStyle = 'rgba(46,163,255,0.5)';
+    ctx.fill();
+  });
+  
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+</body>
+</html> 
