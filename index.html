@@ -316,11 +316,10 @@ rgba(255,255,255,0.01)); box-shadow:0 12px 30px rgba(2,40,80,0.35);
     width: 100%;
   }
 
-  .logo {
-    width: 70px !important;        /* smaller logo for mobile */
-    height: 70px !important;
+ .logo {
+    width: 90px !important;   /* bigger size */
+    height: 90px !important;
   }
-
   .brand div h1 {
     font-size: 20px !important;    /* smaller text */
     line-height: 1.2;
@@ -349,7 +348,16 @@ rgba(255,255,255,0.01)); box-shadow:0 12px 30px rgba(2,40,80,0.35);
   nav a.cta {
     margin-top: 4px;
   }
-
+.service {
+    background: linear-gradient(135deg, rgba(46,163,255,0.2), rgba(0,86,214,0.2));
+    border: 2px solid rgba(46,163,255,0.6);
+    box-shadow: 0 14px 40px rgba(46,163,255,0.4);
+    padding: 20px;
+  }
+   .service:active {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(46,163,255,0.5);
+  }
   /* Hero adjustments */
   .hero-right .info-card {flex: 1 1 100%;}
   .hero-cta {flex-direction: column; gap: 10px;}
