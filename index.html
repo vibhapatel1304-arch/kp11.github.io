@@ -146,8 +146,32 @@ nav a.cta{background:var(--accent); color:#021229; padding:8px 12px; border-radi
 
 /* Services */
 .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px;}
-.service{background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:18px; border-radius:14px; min-height:110px; box-shadow:0 12px 30px rgba(2,40,80,0.36); transition: transform 0.3s, box-shadow 0.3s;}
-.service:hover{transform: translateY(-6px); box-shadow:0 20px 40px rgba(2,40,80,0.5);}
+.service {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  padding: 18px;
+  border-radius: 14px;
+  min-height: 110px;
+
+  /* Hero-card style for highlight */
+  border: 2px solid rgba(46,163,255,0.4);
+  box-shadow: 0 12px 30px rgba(2,40,80,0.36);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2,40,80,0.5);
+  border: 2px solid rgba(46,163,255,1);
+}
+
+/* Mobile fix */
+@media(max-width:520px){
+  .service {
+    border: 2px solid rgba(46,163,255,0.4);
+    box-shadow: 0 12px 30px rgba(2,40,80,0.36);
+  }
+}
+
 
 /* Gallery */
 .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:18px;}
@@ -663,4 +687,5 @@ draw();
 </script>
 </body>
 </html> 
+
 
