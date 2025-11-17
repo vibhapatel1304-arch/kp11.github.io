@@ -44,15 +44,11 @@ header{display:flex; justify-content:space-between; align-items:center; flex-wra
   font-size: 0.95rem;
 }
 
-.logo {
-  width: 90px; /* increase logo size */
-  height: 90px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(135deg,var(--accent),var(--accent-2));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media(max-width:520px){
+  .logo {
+    width: 90px !important;   /* bigger size */
+    height: 90px !important;
+  }
 }
 
 .logo img{width:100%; height:100%; object-fit:contain;}
@@ -659,3 +655,4 @@ draw();
 </script>
 </body>
 </html> 
+
